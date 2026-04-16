@@ -100,3 +100,16 @@ header{background:var(--header-bg);border-bottom:1px solid var(--border);padding
 
 /* ── FOOTER ── */
 footer{text-align:center;padding:24px;font-size:12px;color:var(--muted2);border-top:1px solid var(--border);margin-top:40px}
+
+/* ── LOADER ── */
+#loader{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}
+#loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.loader-inner{display:flex;flex-direction:column;align-items:center;gap:12px}
+.loader-logo{font-family:'DM Serif Display',serif;font-size:32px;color:var(--green-dark);letter-spacing:-0.5px}
+.loader-logo span{color:var(--green)}
+.loader-sub{font-size:12px;color:var(--muted2);letter-spacing:.04em;margin-top:-8px}
+.loader-spinner{margin:16px 0 8px;width:40px;height:40px;position:relative}
+.spinner-ring{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-text{font-size:13px;color:var(--muted);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
