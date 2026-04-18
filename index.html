@@ -6,11 +6,39 @@
 <title>Scholar Compass NP</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
+<style>
+  #loader{position:fixed;inset:0;background:#f7f8f6;display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity .6s ease,visibility .6s ease}
+  @media(prefers-color-scheme:dark){#loader{background:#0f1310}}
+  #loader.hidden{opacity:0;visibility:hidden;pointer-events:none}
+  .loader-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+  .loader-logo{font-family:'DM Serif Display',Georgia,serif;font-size:30px;color:#0F6E56;letter-spacing:-0.5px}
+  @media(prefers-color-scheme:dark){.loader-logo{color:#1a9470}}
+  .loader-logo span{color:#1D9E75}
+  @media(prefers-color-scheme:dark){.loader-logo span{color:#25c48f}}
+  .loader-spinner{width:40px;height:40px}
+  .spinner-ring{width:40px;height:40px;border:3px solid #e2e8e4;border-top-color:#1D9E75;border-radius:50%;animation:spin .8s linear infinite}
+  @media(prefers-color-scheme:dark){.spinner-ring{border-color:#2a332e;border-top-color:#25c48f}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .loader-text{font-family:'DM Sans',sans-serif;font-size:13px;color:#6b7a72;animation:pulse 1.4s ease-in-out infinite}
+  @media(prefers-color-scheme:dark){.loader-text{color:#8a9e91}}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+</style>
 </head>
 <body>
 
+<!-- ── LOADING SCREEN ── -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">Scholar Compass <span>NP</span></div>
+    <div class="loader-spinner">
+      <div class="spinner-ring"></div>
+    </div>
+    <div class="loader-text">Loading colleges...</div>
+  </div>
+</div>
+
 <header>
-  <div class="logo">Scholar Compass NP <span>by GM Studios</span></div>
+  <div class="logo">Scholar Compass NP</div>
   <div class="pill-badge">110+ colleges</div>
 </header>
 
@@ -133,7 +161,7 @@
   </div>
 </div>
 
-<footer>Scholar Compass NP &nbsp;·&nbsp; Built by GM Studios &nbsp;·&nbsp; Data is for guidance only. Always verify with the college directly.</footer>
+<footer>Scholar Compass NP &nbsp;·&nbsp; Data is for guidance only. Always verify with the college directly.</footer>
 
 <script src="app.js"></script>
 </body>

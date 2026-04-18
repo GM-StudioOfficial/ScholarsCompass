@@ -694,3 +694,11 @@ function restart(){
   document.querySelectorAll('button[id^="n"]').forEach(b=>b.disabled=true);
   go(1);
 }
+
+// ── DISMISS LOADER once everything is ready ──
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    if(loader) loader.classList.add('hidden');
+  }, 1400);
+});
